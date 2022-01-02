@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/head'); %>
+    <title>Register</title>
+  </head>
+  <body>
+	<div class="ui two column centered grid">
+		<div class="column">
+			<h1>Register</h1>
+			<ul>
+			  <% if(typeof errors != 'undefined') { %> <% errors.forEach((error) => { %>
+			  <li><%= error.message %></li>
+			  <% }) %> <% } %>
+			</ul>
+			<form action="/users/register" method="POST" class="ui form">
+			  <div class="field">
+				<input class="ui input error" type="text" name="name" id="name" placeholder="Name" />
+			  </div>
+			  <div class="field">
+				<input
+				class="ui input error"
+				  type="email"
+				  name="email"
+				  id="email"
+				  placeholder="Email"
+				  required
+				/>
+			  </div>
+			  <div class="field">
+				<input
+				class="ui input error"
+				  type="password"
+				  name="password"
+				  id="password"
+				  placeholder="Password"
+				  required
+				/>
+			  </div>
+			  <div class="field">
+				<input
+				class="ui input error"
+				  type="password"
+				  name="password2"
+				  id="password2"
+				  placeholder="Confirm password"
+				  required
+				/>
+			  </div>
+			  <div>
+				<input class="ui blue button" type="submit" value="Register" />
+			  </div>
+			  <a href="/users/login">Already registered? Login here.</a>
+			</form>
+		
+		</div>
+	  </div>
+    <%- include('partials/footer'); %>
