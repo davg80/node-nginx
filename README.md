@@ -2,7 +2,7 @@
 
 1.Clone
  ```
- git clone https://github.com/davg80/node-microservice-nginx.git
+ git clone https://github.com/davg80/node-nginx.git
  ```
  
  2.Go to project folder.
