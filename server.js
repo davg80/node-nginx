@@ -10,7 +10,7 @@ const appId = process.env.APPID;
 const initializePassport = require("./passportConfig");
 initializePassport(passport);
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
 //Middleware
 app.set("view engine", "ejs");
