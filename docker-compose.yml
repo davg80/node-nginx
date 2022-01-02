@@ -6,19 +6,6 @@ services:
       - './nginx/default.conf:/etc/nginx/nginx.conf'
     ports:
       - '8080:80'
-  postgres:
-    container_name: postgres
-    image: postgres:latest
-    restart: always
-    environment:
-      POSTGRES_USER: ${DB_USER}
-      POSTGRES_PASSWORD: ${DB_PASSWORD}
-      POSTGRES_DB: ${DB_DATABASE}
-      PGDATA: /var/lib/postgresql/data/pgdata
-    ports:
-      - "5432:5432"
-    volumes:
-      - ./data/postgres/pgdata:/var/lib/postgresql/data/pgdata
   app1:
     image: node-app
     environment: 
