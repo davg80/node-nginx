@@ -7,14 +7,13 @@ services:
     ports:
       - '8080:80'
   postgres:
-    container_name: postgres
+    container_name: postgres_data
     image: postgres
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: root 
-      PGDATA: /data/postgres
     volumes:
-       - postgres:/data/postgres
+      - postgres_data:/var/lib/postgresql/data/
     ports:
       - "5432:5432"
     networks:
